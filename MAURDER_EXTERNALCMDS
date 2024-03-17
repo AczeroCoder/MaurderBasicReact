@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Function to check if Node.js is installed
+node_installed() {
+    command -v node &> /dev/null
+}
+
+# Function to check if npm is installed
+npm_installed() {
+    command -v npm &> /dev/null
+}
+
+# Loop until both Node.js and npm are installed
+while ! node_installed || ! npm_installed; do
+    if ! node_installed; then
+        echo "Node.js is not installed. Installing..."
+        apt install -y nodejs
+    fi
+
+    if ! npm_installed; then
+        echo "npm is not installed. Installing..."
+        apt install -y npm
+    fi
+done
+
+# Both Node.js and npm are installed
+echo "Node.js and npm are installed."

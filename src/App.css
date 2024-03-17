@@ -5,6 +5,8 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+  position: absolute;
+  top: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +37,22 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#mainDiv {
+  width: 100%;
+  height: auto;
+}
+#cColorBtn {
+  border: 0;
+  background: #61dafb;
+  font-size: 16px;
+  height: 30px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+#cColorBtn:hover {
+  height: 40px;
 }
